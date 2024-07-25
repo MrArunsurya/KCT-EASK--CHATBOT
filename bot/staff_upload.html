@@ -1,0 +1,28 @@
+<?php
+session_start();
+if (!isset($_SESSION['staff_id'])) {
+    header("Location: index.html");
+    exit();
+}
+?>d
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Hall Ticket</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Upload Student Hall Ticket</h2>
+        <form action="upload_hallticket.php" method="POST" enctype="multipart/form-data">
+            <label for="student-id">Student ID:</label>
+            <input type="number" id="student-id" name="student-id" required>
+            <label for="hallticket">Hall Ticket File:</label>
+            <input type="file" id="hallticket" name="hallticket" required>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+</body>
+</html>
